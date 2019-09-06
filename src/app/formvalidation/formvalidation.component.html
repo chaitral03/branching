@@ -1,0 +1,123 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form [formGroup]="reagisterForm"(ngSubmit)="pageTest()">
+       <h3 class="text-center">Reactive form group</h3>
+       <div class="form-group">
+         <label>full name</label><em>*</em>
+         <input type="text" class="form-control input-sm" formControlName="firstname">
+         <div *ngIf="submitted && f.firstname.errors" class="text-danger">
+            <div *ngIf="f.firstname.errors.required">
+              name field is required!
+            </div>
+         </div>
+       </div>
+
+       <div class="form-group">
+          <label>last name</label><em>*</em>
+          <input type="text" class="form-control input-sm" formControlName="lastname">
+          <div *ngIf="submitted && h.lastname.errors" class="text-danger">
+             <div *ngIf="h.lastname.errors.required">
+               lastname field is required!
+             </div>
+          </div>
+        </div>
+ 
+      <div class="form-group">
+        <label>middle name</label>
+        <input type="text" class="form-control input-sm" formControlName="lastname">
+        <div *ngIf="submitted && h.middlename.errors" class="text-danger">
+          <div *ngIf="h.middlename.errors.required">
+            middlename field is required
+          </div>
+        </div>
+      </div>
+
+     
+        <div class="form-group">
+            <label> email</label><em>*</em>
+            <input type="email" class="form-control input-sm" formControlName="email">
+          <div *ngIf="submitted && f.email.errors" class="text-danger">
+             <div *ngIf="f.email.errors.required"> email  field is required! </div>
+             <div *ngIf="f.email.errors.email"> enter valid email </div>
+
+               
+
+          </div>
+          </div>
+
+          <div class="form-group">
+              <label> password</label>                <em>*</em>
+
+              <input type="text" class="form-control input-sm" formControlName="password">
+              <div *ngIf="submitted && f.password.errors" class="text-danger">
+                 <div *ngIf="f.password.errors.required">
+                   password field is required!
+                 </div>
+                   <div *ngIf="f.password.errors.minlength">minimum 6 digits</div>
+                   <div *ngIf="f.password.errors.maxlength">maximum 8 digits</div>
+    
+              </div>
+    
+            </div>
+
+            <div class="form-group">
+                <label>Gender </label> 
+                <em>*</em><br>
+
+                <input type="radio" name="gender" formControlName="gender">male
+                <input type="radio" name="gender" formControlName="gender">female
+                <div *ngIf="submitted && f.email.errors" class="text-danger">
+                  <div *ngIf="f.gender.errors.required">
+                    what is your gender
+                  </div>
+                </div>
+
+
+              </div>
+
+            <div class="form-group">
+                <label>city </label>
+                <select class="form-control input-sm">
+                  <option value="">----choose---</option>
+                  <option value="1">Banglore</option>
+                  <option value="2">Tumkur</option>
+                </select>
+                <div *ngIf="submitted && f.city.errors" class="text-danger">
+                  <div *ngIf="f.city.errors.required">
+                    please choose city
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                  <label> address</label>
+                  <textarea class="form-control input-sm" formControlName="address"></textarea>
+          <div *ngIf="submitted && f.address.errors" class="text-danger">
+             <div *ngIf="f.address.errors.required">
+               address field is required!
+             </div>
+          </div>
+                </div>
+                  
+                <div class="form-group">
+                    <label> Terma and conditions</label><em>*</em><br>
+                    <input type="checkbox" value="yes" formControlName="tnc">
+                    I agree terms and conditions
+                    <div *ngIf="submitted && f.tnc.errors" class="text-danger">
+                        <div *ngIf="f.tnc.errors.required">
+                        select this!
+                        </div>
+                  </div>
+                </div>
+      
+                  <div class="form-group text-center">
+                    <button class="btn btn-primary">Register</button>
+                  </div>
+                  </form>
+
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

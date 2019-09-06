@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <div class="col-sm-3 well">
+      
+      <div class="form-group">
+          <label>name</label>
+          <input type="text" class="form-control input-sm" #name>
+        </div>
+        <div class="form-group">
+            <label>mobile</label>
+            <input type="text" class="form-control input-sm" #mobile>
+          </div>
+          <div class="form-group">
+              <label>email</label>
+              <input type="text" class="form-control input-sm" #email>
+            </div>
+            <div class="form-group">
+                <label>city</label>
+                <input type="text" class="form-control input-sm" #city>
+              </div>
+            <div class="form-group">
+                <label>message</label>
+                <textarea class="form-control input-sm" #message></textarea>
+              </div>
+              <div class="form-group text-center">
+                 <button class="btn btn-primary" (click)="saveuser(name.value,mobile.value,email.value,city.value,message.value)">save</button>
+                </div>
+    </div>
+    <div class="col-sm-9">
+      <table class="table table-bordered table-hover">
+        <caption class="text-center">{{msg}}</caption>
+        <tr class="active">
+          <th>user id</th>
+          <th>full name</th>
+          <th>mobile</th>
+          <th>email</th>
+          <th>message</th>
+          <th>city</th>
+          <th>Delete</th>
+        </tr>
+        <table class="table table-bordered table-hover">
+          <caption class="text-center">{{msg}}</caption>
+          <tr class="active">
+            <th>user id</th>
+            <th>full name</th>
+            <th>mobile</th>
+            
+          </tr>
+        </table>
+        <tr *ngFor="let row of alluser; let i=index">
+            <td>{{row.id}}</td>
+          <td>{{row.name}}</td>
+          <td>{{row.mobile}}</td>
+          <td>{{row.email}}</td>
+          <td>{{row.message}}</td>
+          <td>{{row.city}}</td>
+          <td><a (click)="deluser(row.id)"><i class="glyphicon glyphicon-trash"></i></a>
+                ||
+          <a (click)="viewdetails(i)" data-toggle="modal" data-target="#viewdata">More</a>
+            ||
+          <a (click)="editdetails(i)" data-toggle="modal" data-target="#editdata">Edit</a>
+                      
+                    </td>
+
+        </tr>
+      </table>
+
+      <br>
+      <br>
+
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="viewdata" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">user details</h4>
+      </div>
+      <div class="modal-body">
+        <div [innerHTML]="userdata"></div>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editdata" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">edit user details</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <label>Fullname</label>
+            <input type="text" class="form-control input-sm" [ngModel]="namedata" #name2>
+        </div>
+
+        <div class="form-group">
+            <label>mobilenumber</label>
+            <input type="text" class="form-control input-sm" [ngModel]="mobiledata" #mobile2>
+        </div>
+
+        <div class="form-group">
+            <label>email</label>
+            <input type="text" class="form-control input-sm" [ngModel]="emaildata" #email2>
+        </div>
+
+        <div class="form-group">
+            <label>city</label>
+            <input type="text" class="form-control input-sm" [ngModel]="citydata" #city2>
+        </div>
+
+        <div class="form-group">
+            <label>message</label>
+            <textarea class="form-control" [ngModel]="messagedata" #message2></textarea>
+        </div>
+        
+        <input type="hidden" class="form-control input-sm" [ngModel]="userid" #id>
+<br>
+        <div class="form-group text-center">
+           <button class="btn btn-primary btn-sm" (click)="updateuser(name2.value,mobile2.value,email2.value,city2.value,message2.value,id.value)">update</button>
+
+        </div>
+
+      </div><!--modal body close-->
+     
+    </div>
+  </div>
+</div>
+

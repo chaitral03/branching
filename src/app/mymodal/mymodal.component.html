@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h3>Bootstrap example</h3>
+      <button class="btn btn-primary" (click)="showmodal()" data-toggle="modal" data-target="#mymodal">open modal</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-3">
+      <ul class="list-group">
+        <li class="list-group-item active">user navigation</li>
+        <li class="list-group-item" *ngFor="let row of myuser; let i=index">
+          <a (click)="showdata()">{{row.name}}</a>
+        </li>
+      </ul>
+    </div> 
+    <div class="col-sm-9">
+      <div [innerHTML]="userphoto"></div>
+    </div>
+  </div>
+</div>
+
+<!----modal-->
+<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="mymodalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Local image gallary</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-4 form-group" *ngFor="let i of myimage">
+              <img src="../assets/{{i}}" class="img-responsive">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

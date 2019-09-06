@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <br>
+      <input type="number" class="form-control" placeholder="enter the first number" [(ngModel)]="first">
+      <p *ngIf="first < 0 ">enter the number greater than zero</p>
+      <hr>
+      
+      <input type="number" class="form-control" placeholder="enter the second number"[(ngModel)]="second">
+      <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <button class="btn btn-primary" (click)='add()'>Add</button>
+          <br>
+          <p>{{c}}</p>
+          <p>{{2+3}}</p>
+            <p [ngStyle]="{backgroundColor:getColor()}"> hi hello</p>
+          </div>
+          <div class="col-sm-4">
+            <button class="btn btn-warning" (click)="sub()">Subtract</button>
+            <br>
+            <p>{{d}}</p>
+          </div>
+          <div class="col-sm-4">
+              <button class="btn btn-success" (click)="multi()">Multiply</button>
+              <br>
+              <p>{{e}}</p>
+            </div>
+          
+    </div>
+    <div class="col-sm-4"></div>
+
+  </div>
+</div>

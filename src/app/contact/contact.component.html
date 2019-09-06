@@ -1,0 +1,58 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="text-center">This data loaded on page load</h3>
+      <table class="table table-bordered table-hover">
+          <tr>
+            <th>fullname</th>
+            <th>price</th>
+          </tr>
+          <tr *ngFor="let row of alluser; let i=index">
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+  
+
+
+
+          </tr>
+      </table>
+    </div>
+  </div>
+  <!----<div class="row">
+     <div class="col-sm-6">
+       <button class="btn btn-danger" (click)="getjsondata()">List</button>
+       <br><br>
+       <table class="table table-bordered">
+         <tr>
+           <th>Fullname</th>
+           <th>Mobileno</th>
+           <th>age</th>
+         </tr>
+         <tr *ngFor="let myuser of alljsonuser">
+           <td>{{contact.name}}</td>
+           <td>{{contact.mobile}}</td>
+           <td>{{contact.city}}</td>
+
+         </tr>
+       </table>
+     </div>
+     <div class="col-sm-6">
+        <button class="btn btn-danger" (click)="getexternaljson()">Load local json</button>
+        <br><br>
+       <table class="table table-bordered">
+         <tr>
+           <th>car Model</th>
+           <th>price</th>
+           <th>Fuel type</th>
+         </tr>
+         <tr *ngFor="let mycar of cardata">
+           <td>{{mycar.model}}</td>
+           <td>{{mycar.price}}</td>
+           <td>{{mycar.fuelType}}</td>
+
+         </tr>
+       </table>
+     </div>
+  </div>--->
+</div>

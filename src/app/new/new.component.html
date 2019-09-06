@@ -1,0 +1,41 @@
+<!----<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Dashboard</a>
+    </div>
+    <div class="collapse navbar-collapse" uib-collapse="navCollapsed">
+                      <ul class="nav navbar-nav navbar-center">
+              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+              </li>
+          </ul>
+    
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="#/register">Register</a></li>
+              <li><a href="#/">Login</a></li>
+          </ul>
+             </div>
+    <router-outlet></router-outlet>--------->
+    <div class="container">
+        <form [formGroup]="reagisterForm"(ngSubmit)="pageTest()">
+            <h3 class="text-center">Reactive form group</h3>
+            <div class="form-group">
+              <label>full name</label><em>*</em>
+              <input type="text" class="form-control input-sm" formControlName="firstname">
+              <div *ngIf="submitted && h.firstname.errors" class="text-danger">
+                 <div *ngIf="h.firstname.errors.required">
+                   name field is required!
+                 </div>
+              </div>
+            </div>
+            <button class="btn btn-primary">
+                submit
+            </button>
+            </form>
+            </div>

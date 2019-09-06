@@ -1,0 +1,32 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 well">
+       <div class="row">
+         <label>name</label>
+         <input type="text" class="form-control input-sm">
+       </div>
+       <div class="row">
+        <label>mobile</label>
+        <input type="text" class="form-control input-sm">
+      </div>
+      <div class="row">
+        <label>message</label>
+        <textarea class="form-control input-sm"></textarea>
+      </div><br>
+      <div class="row text-center">
+        <button type="submit" class="btn btn-primary input-sm "(click)="show(name.value)">Save</button>
+
+      </div>
+      <div class="col-sm-9">
+        <table>
+          <tr *ngFor="let row of myuser">
+            <th>name</th>
+            </tr>
+
+        </table>
+    </div>
+    
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<br>
+<div class="container">
+  <div class="row">
+  <div class="col-sm-4">
+    <h4>1 Dimension array</h4>
+    <div class="row">
+      <div class="col-sm-8">
+        <input type="text" class="form-control input-sm" #itemname>
+      </div>
+      <div class="col-sm-4">
+        <button class="btn btn-danger btn-sm" (click)="saveitem(itemname.value)">save item</button>
+      </div>
+    </div>
+    <br>
+    <p class="text-center">{{msg}}</p>
+    <table class="table table-bordered">
+        <caption class="text-center">total item is:{{total1}}</caption>
+
+       <tr>
+         <th>item name</th>
+         <th>action</th>
+       </tr>
+      <tr *ngFor="let i of myitem; let j=index">
+          <td>{{i}}</td>
+          <td><i class="glyphicon glyphicon-trash" (click)="delitem(j)"></i></td>
+       </tr>
+    </table>
+  </div><!---4 end---->
+
+<div class="col-sm-1"></div>
+<div class="col-sm-7">
+  <h4>Mutidimension array</h4>
+  <div class="row">
+    <div class="col-sm-5">
+      <input type="text" class="form-control input-sm" placeholder="item name" #name>
+    </div>
+    <div class="col-sm-5">
+        <input type="text" class="form-control input-sm" placeholder="item price" #price>
+    </div>
+    <div class="col-sm-2">
+      <button class="btn btn-danger btn-sm" (click)="saveanyitem(name.value,price.value)">save</button>
+    </div>
+  </div>
+  <br>
+  <p class="text-center">{{msg2}}</p>
+  <table class="table table-bordered table-hover">
+      <caption class="text-center">total item is:{{total2}}</caption>
+
+    <tr>
+      <th>item name</th>
+      <th>item price</th>
+      <th>action</th>
+    </tr>
+    <tr *ngFor="let row of allitem; let k=index">
+      <td>{{row.itemname}}</td>
+      <td>{{row.itemprice}}</td>
+      <td><i class="glyphicon glyphicon-trash" (click)="removeitem(k)"></i></td>
+
+
+    </tr>
+  </table>
+</div>
+</div><!---row end-->
+</div>
